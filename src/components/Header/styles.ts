@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+interface MenuProps {
+  readonly isOpen: boolean;
+};
 
 export const MenuLink = styled.span`
   padding: 1rem 2rem;
@@ -39,7 +42,7 @@ export const Logo = styled.a`
   }
 `;
 
-export const Menu = styled.div`
+export const Menu = styled.div<MenuProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
