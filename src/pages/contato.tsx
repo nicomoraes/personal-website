@@ -41,7 +41,7 @@ const Contato: NextPage = () => {
           <Input type={'email'} name={'email'} label={'E-mail'} />
           <Input type={'text'} name={'subject'} label={'Assunto'} />
           <Input type={'textarea'} name={'message'} label={'Descrição'}/>
-          <PrimaryButton label={'Enviar'}/>
+          <PrimaryButton text={'Enviar'}/>
         </Form>
       </Container>
   )

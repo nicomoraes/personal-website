@@ -1,4 +1,3 @@
-import { FaArrowAltCircleRight } from "react-icons/fa";
 import { PrimaryButton } from "../Button";
 import { RepoDescription, RepoName, RepositoryCell } from './styles';
 
@@ -14,7 +13,7 @@ export function RepoCell({name, description, url}: RepoCellProps) {
         <RepoName>{name}</RepoName>
         <RepoDescription>{description}</RepoDescription>
         <a href={url} target={'_blank'}>
-          <PrimaryButton label={'Acessar'} icon={<FaArrowAltCircleRight size={20}/>}/>
+          <PrimaryButton text={'Acessar'}/>
         </a>
       </RepositoryCell>
   )

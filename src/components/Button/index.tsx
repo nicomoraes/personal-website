@@ -1,32 +1,29 @@
-import {ReactElement} from "react";
-import {IconBaseProps, IconType} from "react-icons";
-import { Primary, Secondary, Tertiary } from './styles'
+import { Primary, Secondary, Tertiary } from './styles';
 
 interface ButtonProps {
-  label: string
-  icon?: ReactElement<IconType>
+  text: string
 }
 
-export function PrimaryButton({label, icon}: ButtonProps) {
+export function PrimaryButton({text}: ButtonProps) {
   return (
     <Primary>
-      {label} {icon}
+      {text}
     </Primary>
   )
 }
 
-export function SecondaryButton({label, icon}: ButtonProps) {
+export function SecondaryButton({text}: ButtonProps) {
   return (
     <Secondary>
-      {label} {icon}
+      {text}
     </Secondary>
   )
 }
 
-export function TertiaryButton({label, icon}: ButtonProps) {
+export function TertiaryButton({text}: ButtonProps) {
   return (
     <Tertiary>
-      {label} {icon}
+      {text}
     </Tertiary>
   )
 }
