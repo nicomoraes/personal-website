@@ -14,14 +14,14 @@ export const RepoContainer = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 50px;
   align-items: baseline;
-  justify-content: baseline;
+  justify-content: baseline;  
   margin-top: 10px;
-  padding: 50px 100px;
+  padding: 30px 200px;
   
   border-radius: 15px;
-  background-color: ${({theme}) => theme.colors.tertiary}50;
+  background-color: ${({theme}) => theme.colors.secondary}50;
 
   @media(max-width: ${({theme}) => theme.breakpoints.md}){
     width: 80%;
@@ -31,7 +31,6 @@ export const RepoContainer = styled.div`
     width: 95%;
     align-items: center;
     justify-content: center;
-
   }
 `
 export const Title = styled.h1`
@@ -40,7 +39,7 @@ export const Title = styled.h1`
   margin-top: 100px;
   font-size: ${({theme}) => theme.fontSize.large.lg_300};
   color: ${({theme}) => theme.colors.primary};
-
+  text-shadow: 1px 1px 1px ${({theme}) => theme.colors.tertiary};
   @media(max-width: ${({theme}) => theme.breakpoints.md}){
     font-size: ${({theme}) => theme.fontSize.large.lg_300};
   }
