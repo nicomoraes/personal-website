@@ -9,7 +9,7 @@ export default {
   },
 
   fontColor: {
-    text: '#565360',
+    text: '#00584b',
     label: '#908E9B',
     disabled: '#E1DFE9',
   },
