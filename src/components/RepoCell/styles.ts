@@ -12,18 +12,23 @@ export const RepositoryCell = styled.div`
   align-items: center;
   text-align: center;
   box-shadow: -2px 2px 0 1px ${props => props.theme.colors.primary};
-
+  
   a{
     text-decoration: none;
+  }
+  
+  &:hover{
+    background-color: ${props => props.theme.colors.secondary}50;
   }
 `
 
 export const RepoName = styled.span`
   color: ${props => props.theme.colors.primary};
-  font-weight: 500;
+  font-weight: 600;
 `
 
 export const RepoDescription = styled.p`
+  font-weight: 400;
   color: ${props => props.theme.fontColor.text};
   margin: 5px 0 20px 0;
 ` 
