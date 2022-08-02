@@ -1,5 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next';
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { RepoCell } from '../components/RepoCell';
 import { useFetch } from "../hooks/useFetch";
 import { Container, RepoContainer, Title } from '../styles/portifolio';
@@ -13,20 +13,24 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
 }
 
+interface RepositoryProps {
+  name: string
+  description: string
+  html_url: string
+}
+
 // @ts-ignore
 const Portifolio: NextPage = ({ repo }) => {
-  const [repos] = useState(repo)
-  const favsRepository = ['calculadora-react', 'manager-task']
+  const [repos] = useState<RepositoryProps[]>(repo)
+  const favsRepository = ['calculadora-react', 'manager-task', 'personal-website', 'ifsc-projects']
 
-  const hasFavRepo = useCallback((obj: any) => {
-    return favsRepository.includes(obj.name)
-  }, [])
+  const filteredRepo = repos.filter(r => favsRepository.includes(r.name));
 
   return (
     <Container>
         <Title>Projetos pessoais</Title>
         <RepoContainer>
-          {repos.filter(hasFavRepo).map((repository: any) => {
+          {filteredRepo.map((repository: RepositoryProps) => {
             return(
               <RepoCell
                   name={repository.name}
