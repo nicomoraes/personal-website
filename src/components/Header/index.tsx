@@ -1,18 +1,16 @@
 import Link from 'next/link';
-import { useState } from "react";
+import { useContext, useState } from "react";
+import Switch from "react-switch";
+import { ThemeContext } from 'styled-components';
 import { Hamburger, Logo, Menu, MenuLink, Nav } from './styles';
+
 interface Props {
   toggleTheme(): void
 }
 
 function Header({ toggleTheme }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-
-  function closeDropMenu(){
-    if(isOpen){
-      setIsOpen(false);
-    }
-  }
+  const { colors, title } = useContext(ThemeContext)
 
   return (
     <Nav>
@@ -34,7 +32,17 @@ function Header({ toggleTheme }: Props) {
         <Link href='/contato'>
           <MenuLink onClick={() => setIsOpen(false)}>Contato</MenuLink>
         </Link>
-          <MenuLink onClick={() => toggleTheme()}>Tema</MenuLink>
+        <Switch
+          onChange={toggleTheme}
+          checked={title === 'dark'}
+          checkedIcon={false}
+          uncheckedIcon={false}
+          height={20}
+          width={50}
+          handleDiameter={20}
+          offColor={colors.primary}
+          onColor={colors.primary}
+        />
       </Menu>
     </Nav>
   );
