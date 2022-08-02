@@ -6,7 +6,6 @@ import {
   Container, Description, Main, Role, SocialBox, Title
 } from "../styles/home";
 
-
 const Home: NextPage = () => {
   return (
     <Container>
@@ -21,14 +20,14 @@ const Home: NextPage = () => {
         <Description>
                 <FaReact   size={30} color={'#61DBFB'}/> React
                 <FaHtml5   size={30} color={'#F06529'}/> HTML5
-                <FaCss3Alt size={30} color={'#3C99DC'}/> CSS5
+                <FaCss3Alt size={30} color={'#3C99DC'}/> CSS3
         </Description>
         
         <SocialBox>
           <a href={'https://github.com/nicomoraes'} target={'_blank'}>
             <FaGithub/>
           </a>
-          <a href={'https://www.linkedin.com/in/nicolas-moraes-82b6a220b/'} target={'_blank'}>
+          <a href={'https://www.linkedin.com/in/nicolasmoraes-ti/'} target={'_blank'}>
             <FaLinkedin/>
           </a>
         </SocialBox>
