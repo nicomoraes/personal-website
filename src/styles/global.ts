@@ -14,6 +14,15 @@ export default createGlobalStyle`
     background-color: ${props => props.theme.colors.background};
    }
    
+   body::-webkit-scrollbar {
+      width: 12px;               /* width of the entire scrollbar */
+   }
+
+   body::-webkit-scrollbar-thumb {
+      background-color: ${props => props.theme.colors.primary};    /* color of the scroll thumb */
+      border-radius: 20px;       /* roundness of the scroll thumb */
+   }
+   
    button, input {
     outline: none;
     border: none;
