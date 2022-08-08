@@ -5,7 +5,6 @@ export const Container = styled.main`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0 100px;
   height: calc(100vh - 70px);
   
   @media(max-width: ${({theme}) => theme.breakpoints.md}){
@@ -60,12 +59,5 @@ export const ContactList = styled.ul`
         color: ${({theme}) => theme.colors.primary};
         margin-right: 5px;
       }
-    }
-  
-    @media(max-width: ${({theme}) => theme.breakpoints.sm}){
-      margin: 15px 0;
-    }
-    @media(max-width: ${({theme}) => theme.breakpoints.md}){
-      margin: 150px 0 0 0;
     }
 `

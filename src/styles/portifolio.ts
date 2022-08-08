@@ -4,34 +4,16 @@ export const Container = styled.div`
   display:  flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 100px;
+  padding: 0 30%;
 
   @media(max-width: ${({theme}) => theme.breakpoints.md}){
-    padding: 0;
+    padding: 10%;
   }
 `
 export const RepoContainer = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 50px;
-  align-items: baseline;
-  justify-content: baseline;  
-  margin-top: 10px;
-  padding: 30px 200px;
-  
-  border-radius: 15px;
-  background-color: ${({theme}) => theme.colors.secondary}50;
-
-  @media(max-width: ${({theme}) => theme.breakpoints.md}){
-    width: 80%;
-    padding: 50px 50px;
-  }
-  @media(max-width: ${({theme}) => theme.breakpoints.sm}){
-    width: 95%;
-    align-items: center;
-    justify-content: center;
-  }
+  display: flex;
+  flex-direction: column;
 `
 export const Title = styled.h1`
   width: 100%;
