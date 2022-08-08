@@ -2,7 +2,7 @@ import emailjs from 'emailjs-com';
 import type { NextPage } from 'next';
 import { FormEvent, useRef } from "react";
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { PrimaryButton } from "../components/Button/";
+import Button from "../components/Button/";
 import Input from "../components/Input";
 import { ContactList, Container, Form, FormTitle } from '../styles/contato';
 
@@ -41,7 +41,7 @@ const Contato: NextPage = () => {
           <Input type={'email'} name={'email'} label={'E-mail'} />
           <Input type={'text'} name={'subject'} label={'Assunto'} />
           <Input type={'textarea'} name={'message'} label={'Descrição'}/>
-          <PrimaryButton text={'Enviar'}/>
+          <Button text={'Enviar'} style_type='tertiary'/>
         </Form>
       </Container>
   )
