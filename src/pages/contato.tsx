@@ -6,14 +6,15 @@ import Button from "../components/Button/";
 import Input from "../components/Input";
 import { ContactList, Container, Form, FormTitle } from '../styles/contato';
 
-const Contato: NextPage = () => {
+//@ts-ignore
+const Contato: NextPage = ({service, template, userid}) => {
 
   const formRef = useRef() as React.MutableRefObject<HTMLFormElement>;
 
   function sendEmail(e: FormEvent) {
     e.preventDefault()
     
-    emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, formRef.current, process.env.USER_ID)
+    emailjs.sendForm(service, template, formRef.current, userid)
       .then((result) => {
         console.log(result.text);
       }, (error) => {
@@ -48,3 +49,14 @@ const Contato: NextPage = () => {
 }
 
 export default Contato
+
+
+export const getServerSideProps = async () => {
+  return {
+    props: {
+      service: process.env.SERVICE_ID,
+      template: process.env.TEMPLATE_ID,
+      userid: process.env.USER_ID,
+    },
+  }
+}
