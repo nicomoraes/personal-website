@@ -13,7 +13,7 @@ const Contato: NextPage = () => {
   function sendEmail(e: FormEvent) {
     e.preventDefault()
     
-    emailjs.sendForm('service_personalwebsite', 'template_7e4ol9c', formRef.current, 'eIfIvWs4RkgxYUkl9')
+    emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, formRef.current, process.env.USER_ID)
       .then((result) => {
         console.log(result.text);
       }, (error) => {
