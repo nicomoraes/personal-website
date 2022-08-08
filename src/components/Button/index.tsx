@@ -1,29 +1,16 @@
-import { Primary, Secondary, Tertiary } from './styles';
+import { ButtonProps, StyledButton } from './styles';
 
-interface ButtonProps {
+interface Props {
   text: string
+  style_type: ButtonProps['style_type']
 }
 
-export function PrimaryButton({text}: ButtonProps) {
+const Button : React.FC<Props> = ({text, style_type}) => {
   return (
-    <Primary>
+    <StyledButton style_type={style_type}>
       {text}
-    </Primary>
+    </StyledButton>
   )
 }
 
-export function SecondaryButton({text}: ButtonProps) {
-  return (
-    <Secondary>
-      {text}
-    </Secondary>
-  )
-}
-
-export function TertiaryButton({text}: ButtonProps) {
-  return (
-    <Tertiary>
-      {text}
-    </Tertiary>
-  )
-}
+export default Button;
