@@ -23,11 +23,7 @@ export const Nav = styled.div`
   align-items: center;
   flex-wrap: wrap;
   background: white;
-  position: absolute;
   background-color: transparent;
-  top: 0;
-  left: 0;
-  right: 0;
 `;
 
 export const Logo = styled.a`
@@ -54,6 +50,7 @@ export const Menu = styled.div<MenuProps>`
     transition: max-height 0.3s ease-in;
     width: 100%;
     background-color: ${({theme}) => theme.colors.background};
+    padding: 0 0 10px 0;
   }
 `;
 
@@ -72,3 +69,12 @@ export const Hamburger = styled.div`
     display: flex;
   }
 `;
+
+export const ThemeSwitcherContainer = styled.div`
+  display: flex;
+  align-items: center;
+  color: ${({theme})=> theme.colors.primary};
+  & > svg {
+    margin-right: 5px;
+  }
+`

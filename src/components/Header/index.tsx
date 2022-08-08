@@ -1,8 +1,19 @@
 import Link from 'next/link';
 import { useContext, useState } from "react";
+import {
+  FaBars, FaRegMoon,
+  FaSun, FaWindowClose
+} from 'react-icons/fa';
 import Switch from "react-switch";
 import { ThemeContext } from 'styled-components';
-import { Hamburger, Logo, Menu, MenuLink, Nav } from './styles';
+import {
+  Hamburger,
+  Logo,
+  Menu,
+  MenuLink,
+  Nav,
+  ThemeSwitcherContainer
+} from './styles';
 
 interface Props {
   toggleTheme(): void
@@ -18,31 +29,40 @@ function Header({ toggleTheme }: Props) {
         Nicolas<span> Moraes</span>
       </Logo>
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
-        <span />
-        <span />
-        <span />
+      { isOpen === false ?
+        <FaBars color={colors.primary} size={25}/> 
+        : 
+        <FaWindowClose color={colors.primary} size={25}/> 
+      }
       </Hamburger>
       <Menu isOpen={isOpen}>
         <Link href='/'>
           <MenuLink onClick={() => setIsOpen(false)}>Home</MenuLink>
         </Link>
-        <Link href='/portifolio'>
-          <MenuLink onClick={() => setIsOpen(false)}>Portifólio</MenuLink>
+        <Link href='/portfolio'>
+          <MenuLink onClick={() => setIsOpen(false)}>Portfólio</MenuLink>
         </Link>
         <Link href='/contato'>
           <MenuLink onClick={() => setIsOpen(false)}>Contato</MenuLink>
         </Link>
-        <Switch
-          onChange={toggleTheme}
-          checked={title === 'dark'}
-          checkedIcon={false}
-          uncheckedIcon={false}
-          height={20}
-          width={50}
-          handleDiameter={20}
-          offColor={colors.primary}
-          onColor={colors.primary}
-        />
+        <ThemeSwitcherContainer>
+          {title === 'light' ? 
+            <FaSun color={colors.primary}/> 
+            : 
+            <FaRegMoon color={colors.primary}/>
+          }
+          <Switch
+            onChange={toggleTheme}
+            checked={title === 'dark'}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            height={20}
+            width={50}
+            handleDiameter={20}
+            offColor={colors.primary}
+            onColor={colors.primary}
+          />
+        </ThemeSwitcherContainer>
       </Menu>
     </Nav>
   );
