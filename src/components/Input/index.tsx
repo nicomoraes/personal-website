@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Container } from './styles';
 
-interface InputProps {
+interface Props {
   name: string
   label: string
   type?: string
 }
 
-const Input: React.FunctionComponent<InputProps> = ({ name, label, type }) => {
+const Input: React.FunctionComponent<Props> = ({ name, label, type }) => {
   const [value, setValue] = useState('')
 
   return (
