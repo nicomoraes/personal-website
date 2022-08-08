@@ -1,5 +1,5 @@
-import { PrimaryButton } from "../Button";
-import { RepoDescription, RepoName, RepositoryCell } from './styles';
+import Button from "../Button";
+import { RepoDescription, RepoInfo, RepoName, RepositoryCell } from './styles';
 
 interface RepoCellProps{
   name: string
@@ -10,11 +10,13 @@ interface RepoCellProps{
 export function RepoCell({name, description, url}: RepoCellProps) {
   return (
       <RepositoryCell>
-        <RepoName>{name}</RepoName>
-        <RepoDescription>{description}</RepoDescription>
-        <a href={url} target={'_blank'}>
-          <PrimaryButton text={'Acessar'}/>
-        </a>
+        <RepoInfo>
+          <RepoName>{name}</RepoName>
+          <RepoDescription>{description}</RepoDescription>
+          <a href={url} target={'_blank'}>
+            <Button text={'Acessar'} style_type='tertiary'/>
+          </a>
+        </RepoInfo>
       </RepositoryCell>
   )
 }
