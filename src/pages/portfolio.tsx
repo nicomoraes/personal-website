@@ -3,23 +3,25 @@ import { RepoCell } from '../components/RepoCell';
 import repositories, { RepositoryProps } from '../lib/repositories';
 import { Container, RepoContainer, Title } from '../styles/portifolio';
 
-const Portifolio: NextPage = () => {
+const Portfolio: NextPage = () => {
   return (
     <Container>
-        <Title>Projetos pessoais</Title>
-        <RepoContainer>
-          {repositories.map((repository: RepositoryProps) => {
-            return(
-              <RepoCell
-                  name={repository.name}
-                  description={repository.description}
-                  url={repository.url}
-              />
-            )
-          })}
-        </RepoContainer>
-      </Container>
+      <Title>PROJETOS PESSOAIS</Title>
+      <RepoContainer>
+        {repositories.map((repository: RepositoryProps) => {
+          return (
+            <RepoCell
+              key={repository.id}
+              cellID={repository.id}
+              name={repository.name}
+              description={repository.description}
+              url={repository.url}
+            />
+          )
+        })}
+      </RepoContainer>
+    </Container>
   )
 }
 
-export default Portifolio
+export default Portfolio
