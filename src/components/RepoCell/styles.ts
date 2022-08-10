@@ -1,13 +1,32 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-export const RepositoryCell = styled.div`
+const cellAnimation = keyframes`
+  0%{
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+`
+type CellProps = {
+  delayTime: number //In seconds
+}
+
+export const RepositoryCell = styled.div<CellProps>`
+  display: flex;
   margin: 20px 0;
+  padding: 20px;
+  width: 100%;
+
   background-color: ${props => props.theme.colors.secondary};
   border-radius: 15px;
-  padding: 20px;
-  display: flex;
-  box-shadow: -2px 2px 0 1px ${props => props.theme.colors.primary};
-  width: 100%;
+  opacity: 0;
+  border: 1px solid ${({theme}) => theme.colors.primary};
+  animation: ${cellAnimation} 4s;
+  animation-delay: ${props => props.delayTime}s;
+  animation-fill-mode: forwards;
 `
 export const RepoInfo = styled.div`
   display: flex;
@@ -24,5 +43,6 @@ export const RepoDescription = styled.p`
   font-weight: 400;
   color: ${props => props.theme.fontColor.text};
   line-break: normal;
-  margin: 5px 0 10px 0;
+  text-align: justify;
+  margin: 8px 0 20px 0;
 ` 
