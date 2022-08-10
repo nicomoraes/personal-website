@@ -31,12 +31,10 @@ export const Form = styled.form`
     padding: 10px 50px;
   }
 `
-
 export const FormTitle = styled.h1`
   font-size: ${({theme}) => theme.fontSize.medium.md_125};
   color: ${({theme}) => theme.colors.primary};
 `
-
 export const ContactList = styled.ul`
   width: max-content;
   display: flex;
@@ -60,4 +58,14 @@ export const ContactList = styled.ul`
         margin-right: 5px;
       }
     }
+`
+
+
+interface FormResponseProps {
+  message: string
+}
+export const FormResponse = styled.p<FormResponseProps>`
+  width: max-content;
+  text-align: center;
+  color: ${props => props.message === 'OK' ? '#22bb33' : '#bb2124'}
 `

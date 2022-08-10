@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -24,42 +24,54 @@ const animatedText = keyframes`
     background-position: 100%; 
   }
 `
-const text = css`
+export const Title = styled.h1`
+  width: max-content;
+
+  font-size: ${({ theme }) => theme.fontSize.extra_large.ex_700};
+  text-align: center;
+  color: transparent;
+
   background-image: linear-gradient(
     to right, 
-    ${props => (props.theme.colors.secondary)},
+    ${props => (props.theme.colors.tertiary)},
     ${props => (props.theme.colors.primary)},
-    ${props => (props.theme.colors.tertiary)}
+    ${props => (props.theme.colors.secondary)}
   );
-  -webkit-background-clip: text; 
   background-clip: text; 
-  color: transparent;
-  
+  -webkit-background-clip: text; 
   background-size: 300%;
   background-position: -100%;  
   
-  animation: ${animatedText} 4s infinite alternate;
-`
-export const Title = styled.h1`
-  width: max-content;
-  font-size: ${({ theme }) => theme.fontSize.extra_large.ex_600};
-  text-align: center;
-  color: ${({ theme }) => theme.colors.primary};
-  ${text}
+  animation: ${animatedText} 7s infinite alternate;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.md}){
+    font-size: ${({ theme }) => theme.fontSize.large.lg_400};
+  }
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.sm}){
     font-size: ${({ theme }) => theme.fontSize.large.lg_300};
   }
 `
 export const Role = styled.span`
   width: max-content;
-  margin: 10px 0;
+  margin: 10px 0 30px;
   padding: 10px;
   border-radius: 15px;
-  color: ${({ theme }) => theme.fontColor.text};
-  font-size: ${({ theme }) => theme.fontSize.medium.md_150};
+
+  color: ${({ theme }) => theme.colors.background};
+  font-size: ${({ theme }) => theme.fontSize.large.lg_300};
   background: ${({ theme }) => theme.colors.secondary};
   text-align: center;
+
+  background-image: linear-gradient(
+    to right, 
+    ${props => (props.theme.colors.secondary)},
+    ${props => (props.theme.colors.primary)}
+  );
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.md}){
+    font-size: ${({ theme }) => theme.fontSize.large.lg_200};
+  }
 `
 export const Description = styled.p`
   display: flex;
@@ -70,21 +82,27 @@ export const Description = styled.p`
   word-break:  break-word;
   text-align: center;
   font-weight: 500;
-  font-size: ${({ theme }) => theme.fontSize.medium.md_100};
+  font-size: ${({ theme }) => theme.fontSize.medium.md_125};
   color: ${({ theme }) => theme.colors.primary};
-
-  svg{
-    margin-left: 20px;
-  }
-
+  
   & + & {
     margin-top: 20px;
+  } 
+
+  svg{
+    margin: 0 5px 0 20px;
   }
   
-  span{
-    padding: 0 3px;
-    background: ${({ theme }) => theme.colors.tertiary};
-    border-radius: 5px;
+  @media(max-width: ${({ theme }) => theme.breakpoints.md}){
+    font-size: ${({ theme }) => theme.fontSize.medium.md_100};
+    
+    & + & {
+      font-size: ${({ theme }) => theme.fontSize.small.sm_075};
+    }
+    
+    svg:nth-child(1){
+      margin-left: 0;
+    }
   }
 `
 
@@ -100,7 +118,6 @@ export const SocialBox = styled.div`
       margin-left: 20px;
     }
     
-    text-decoration: none;
     color: ${({ theme }) => theme.colors.primary};
     
     svg {
