@@ -8,9 +8,6 @@ export const RepositoryCell = styled.div`
   display: flex;
   box-shadow: -2px 2px 0 1px ${props => props.theme.colors.primary};
   width: 100%;
-  a{
-    text-decoration: none;
-  }
 `
 export const RepoInfo = styled.div`
   display: flex;
@@ -27,6 +24,5 @@ export const RepoDescription = styled.p`
   font-weight: 400;
   color: ${props => props.theme.fontColor.text};
   line-break: normal;
-  margin: 5px 0;
-  text-align: justify;
+  margin: 5px 0 10px 0;
 ` 
