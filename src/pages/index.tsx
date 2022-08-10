@@ -1,9 +1,18 @@
 import type { NextPage } from 'next';
 import {
-  FaCss3Alt, FaGithub, FaHtml5, FaLinkedin, FaReact
+  FaCss3Alt,
+  FaGithub,
+  FaHtml5,
+  FaLinkedin,
+  FaReact
 } from 'react-icons/fa';
 import {
-  Container, Description, Main, Role, SocialBox, Title
+  Container,
+  Description,
+  Main,
+  Role,
+  SocialBox,
+  Title
 } from "../styles/home";
 
 const Home: NextPage = () => {
@@ -32,7 +41,6 @@ const Home: NextPage = () => {
           </a>
         </SocialBox>
       </Main>
-
     </Container>
   )
 }
