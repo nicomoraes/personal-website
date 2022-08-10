@@ -7,6 +7,9 @@ import {
   FaReact
 } from 'react-icons/fa';
 import {
+  SiNextdotjs
+} from 'react-icons/si';
+import {
   Container,
   Description,
   Main,
@@ -27,17 +30,18 @@ const Home: NextPage = () => {
           Estudante de Análise e Desenvolvimento de Sistemas - IFSC.
         </Description>
         <Description>
-                <FaReact   size={30} color={'#61DBFB'}/> React
-                <FaHtml5   size={30} color={'#F06529'}/> HTML5
-                <FaCss3Alt size={30} color={'#3C99DC'}/> CSS3
+          <SiNextdotjs size={30}  color={'black'}/> Next.js
+          <FaReact     size={30}  color={'#61DBFB'} /> React
+          <FaHtml5     size={30}  color={'#F06529'} /> HTML5
+          <FaCss3Alt   size={30}  color={'#3C99DC'} /> CSS3
         </Description>
-        
+
         <SocialBox>
           <a href={'https://github.com/nicomoraes'} target={'_blank'}>
-            <FaGithub/>
+            <FaGithub />
           </a>
           <a href={'https://www.linkedin.com/in/nicolasmoraes-ti/'} target={'_blank'}>
-            <FaLinkedin/>
+            <FaLinkedin />
           </a>
         </SocialBox>
       </Main>
