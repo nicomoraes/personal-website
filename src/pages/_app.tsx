@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     function checkTheme() {
       const typeTheme = localStorage.getItem('theme')
       if (typeTheme != 'light') {
@@ -33,13 +33,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     checkTheme();
   })
 
-    return (
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Header toggleTheme={toggleTheme} />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    )
-  }
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Header toggleTheme={toggleTheme} />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
+}
 
 export default MyApp
