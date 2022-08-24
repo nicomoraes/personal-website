@@ -58,7 +58,7 @@ const Contato: NextPage = ({ service, template, userid }) => {
 
 export default Contato
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   return {
     props: {
       service: process.env.SERVICE_ID,
