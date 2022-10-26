@@ -9,6 +9,7 @@ import {
 import {
   SiNextdotjs
 } from 'react-icons/si';
+import { useTheme } from 'styled-components';
 import {
   Container,
   Description,
@@ -19,6 +20,7 @@ import {
 } from "../styles/home";
 
 const Home: NextPage = () => {
+  const { title } = useTheme()
   return (
     <Container>
       <Main>
@@ -30,7 +32,7 @@ const Home: NextPage = () => {
           Estudante de Análise e Desenvolvimento de Sistemas - IFSC.
         </Description>
         <Description>
-          <SiNextdotjs size={30}  color={'black'}/> Next.js
+          <SiNextdotjs size={30}  color={title === 'light' ? '#000' : '#FFF'}/> Next.js
           <FaReact     size={30}  color={'#61DBFB'} /> React
           <FaHtml5     size={30}  color={'#F06529'} /> HTML5
           <FaCss3Alt   size={30}  color={'#3C99DC'} /> CSS3

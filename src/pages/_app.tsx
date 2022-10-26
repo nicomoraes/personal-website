@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { DefaultTheme, ThemeProvider } from 'styled-components'
 import Header from '../components/Header'
 import GlobalStyle from '../styles/global'
@@ -20,18 +20,18 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     function checkTheme() {
-      const typeTheme = localStorage.getItem('theme')
-      if (typeTheme != 'light') {
-        setTheme(dark)
+      const typeTheme = localStorage.getItem("theme");
+      if (typeTheme != "light") {
+        setTheme(dark);
       }
-      if (typeTheme != 'dark') {
-        setTheme(light)
+      if (typeTheme != "dark") {
+        setTheme(light);
       }
     }
     checkTheme();
-  })
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>

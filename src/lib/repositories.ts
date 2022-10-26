@@ -9,7 +9,7 @@ export interface RepositoryProps {
   {
     id: 1,
     name: 'Gerenciador de Tarefas',
-    description: 'Desenvolvido com o Framework Next.js e tem como armazenamendo o banco de dados MongoDB. Permite a adição, exclusão e edição de tarefas. Mantèm os dados atualizados entre o cliente e o banco de dados utilizando a biblioteca SWR.',
+    description: 'Foi desenvolvido com o Framework Next.js + banco de dados MongoDB. Permite a adição, exclusão e edição de tarefas. Mantèm os dados atualizados entre o cliente e o banco de dados utilizando a biblioteca SWR.',
     url: 'https://github.com/nicomoraes/manager-task'
   },
   {
